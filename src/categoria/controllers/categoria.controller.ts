@@ -20,14 +20,14 @@ export class CategoriaController{
 
     }
 
-    @Get()
+    @Get('/:id')
     @HttpCode(HttpStatus.OK)
     findById(@Param('id', ParseIntPipe) id: number): Promise<Categoria>{
         return this.categoriaService.findById(id);
 
 }
 
-    @Get()
+    @Get('/categoria/:categoria')
     @HttpCode(HttpStatus.OK)
     findByCategoria(@Param('categoria') categoria: string): Promise<Categoria[]>{
         return this.categoriaService.findByCategoria(categoria);
@@ -46,7 +46,7 @@ export class CategoriaController{
         return this.categoriaService.update(categoria);
     }
     
-    @Delete()
+    @Delete('/:id')
     @HttpCode(HttpStatus.NO_CONTENT)
     delete(@Param('id', ParseIntPipe) id: number) {
            return this.categoriaService.delete(id);
