@@ -5,14 +5,16 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Categoria } from './categoria/entities/categoria.entities';
 import { Module } from "@nestjs/common";
 import { CategoriaModule } from './categoria/categoria.module';
+import { ConfigModule } from '@nestjs/config';
 
-@Module({
+ConfigModule.forRoot()
+@Module({ 
   imports: [TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
-    port: 3306,
+    port: parseInt(process.env.PORT),
     username: 'root',
-    password: 'root',
+    password: process.env.PASSWORD,
     database: 'db_codeaxis',
     entities: [Categoria],
     synchronize: true
