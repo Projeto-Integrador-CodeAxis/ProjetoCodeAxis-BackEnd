@@ -26,9 +26,10 @@ import { UsuarioModule } from './usuario/usuario.module';
     synchronize: true
   }),
   CategoriaModule,
-  CursoModule, AuthModule, UsuarioModule
-  
-],
+  CursoModule,
+  UsuarioModule,
+  AuthModule
+  ],
   controllers: [],
   providers: [],
 })

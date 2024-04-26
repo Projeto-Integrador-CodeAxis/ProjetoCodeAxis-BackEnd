@@ -53,9 +53,13 @@ export class UsuarioService {
         
         let buscaUsuario = await this.findByUsuario(usuario.usuario);
 
-        if (!buscaUsuario) {
+        if (!buscaUsuario){
+            
+            if (!usuario.foto)
+                usuario.foto = 'https://i.imgur.com/Sk5SjWE.jpg'   
+                
             usuario.senha = await this.bcrypt.criptografarSenha(usuario.senha)
-            return await this.usuarioRepository.save(usuario);
+            return await this.usuarioRepository.save(usuario);    
         }
 
         throw new HttpException("O Usuario ja existe!", HttpStatus.BAD_REQUEST);
