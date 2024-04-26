@@ -1,4 +1,4 @@
-import { IsNotEmpty } from "class-validator";
+import { IsNotEmpty, IsNumber } from "class-validator";
 import { Categoria } from "src/categoria/entities/categoria.entities";
 import { Usuario } from "src/usuario/entities/usuario.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
@@ -27,6 +27,7 @@ export class Curso{
     @Column({length: 1000, nullable: false})
     link: string
 
+    @IsNumber({maxDecimalPlaces: 2})
     @IsNotEmpty()
     @Column({type: 'decimal', precision: 10, scale: 2, nullable: false})
     valor: number

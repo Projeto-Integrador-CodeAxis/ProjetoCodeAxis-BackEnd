@@ -1,8 +1,9 @@
 import {Curso} from "../entities/curso.entity"
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, UseGuards } from "@nestjs/common";
 import { CursoService } from "../services/curso.service";
+import { JwtAuthGuard } from "src/auth/guard/jwt-auth.guard";
 
-
+@UseGuards(JwtAuthGuard)
 @Controller("/cursos")
 export class CursoController{
     constructor(private readonly cursoService: CursoService){}
