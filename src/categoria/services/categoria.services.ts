@@ -3,8 +3,6 @@ import { Categoria } from "../entities/categoria.entities";
 import { InjectRepository } from "@nestjs/typeorm";
 import { DeleteResult, ILike, Repository } from "typeorm";
 
-
-
 @Injectable()
 export class CategoriaService{
     constructor(

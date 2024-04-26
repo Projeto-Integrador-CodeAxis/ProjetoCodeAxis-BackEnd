@@ -3,11 +3,6 @@ import { CategoriaService } from "../services/categoria.services";
 import { HttpAdapterHost } from "@nestjs/core";
 import { Categoria } from "../entities/categoria.entities";
 
-
-
-
-
-
 @Controller("/categorias")
 export class CategoriaController{
 
