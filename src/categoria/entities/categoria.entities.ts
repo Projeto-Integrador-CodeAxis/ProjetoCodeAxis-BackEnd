@@ -1,13 +1,17 @@
 import { IsNotEmpty } from "class-validator";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Curso } from "src/curso/entities/curso.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name: 'tb_categorias'})
 export class Categoria {
 
     @PrimaryGeneratedColumn()
-    id: number
+    id: number;
 
     @IsNotEmpty()
     @Column({length: 255, nullable: false})
-    categoria: string
+    categoria: string;
+
+    @OneToMany(() => Curso, (curso) => curso.categoria)
+    curso: Curso[]
 }

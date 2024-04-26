@@ -6,20 +6,25 @@ import { Categoria } from './categoria/entities/categoria.entities';
 import { Module } from "@nestjs/common";
 import { CategoriaModule } from './categoria/categoria.module';
 import { ConfigModule } from '@nestjs/config';
+import { Curso } from './curso/entities/curso.entity';
+import { CursoModule } from './curso/curso.module';
 
-ConfigModule.forRoot()
 @Module({ 
-  imports: [TypeOrmModule.forRoot({
+  imports: [
+    ConfigModule.forRoot(),
+    TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
-    port: parseInt(process.env.PORT),
+    port: 3306,
     username: 'root',
-    password: process.env.PASSWORD,
+    password: 'Lana5595',
     database: 'db_codeaxis',
-    entities: [Categoria],
+    entities: [Categoria, Curso],
     synchronize: true
   }),
-  CategoriaModule
+  CategoriaModule,
+  CursoModule,
+  
 ],
   controllers: [],
   providers: [],
