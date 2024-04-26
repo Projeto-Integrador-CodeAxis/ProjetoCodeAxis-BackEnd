@@ -8,6 +8,9 @@ import { CategoriaModule } from './categoria/categoria.module';
 import { ConfigModule } from '@nestjs/config';
 import { Curso } from './curso/entities/curso.entity';
 import { CursoModule } from './curso/curso.module';
+import { AuthModule } from './auth/auth.module';
+import { Usuario } from './usuario/entities/usuario.entity';
+import { UsuarioModule } from './usuario/usuario.module';
 
 @Module({ 
   imports: [
@@ -19,11 +22,11 @@ import { CursoModule } from './curso/curso.module';
     username: 'root',
     password: process.env.PASSWORD,
     database: 'db_codeaxis',
-    entities: [Categoria, Curso],
+    entities: [Categoria, Curso, Usuario],
     synchronize: true
   }),
   CategoriaModule,
-  CursoModule,
+  CursoModule, AuthModule, UsuarioModule
   
 ],
   controllers: [],

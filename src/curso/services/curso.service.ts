@@ -15,7 +15,8 @@ export class CursoService{
     async findAll(): Promise<Curso[]>{
     return await this.cursoRepository.find({
         relations: {
-            categoria: true
+            categoria: true,
+            usuario: true
         }
     });
 
@@ -27,7 +28,8 @@ export class CursoService{
             id
             
         }, relations: {
-            categoria: true
+            categoria: true,
+            usuario: true
         }
     });
 
@@ -44,7 +46,8 @@ export class CursoService{
             where:{
                 titulo: ILike(`%${titulo}%`)
             }, relations: {
-                categoria: true
+                categoria: true,
+                usuario: true   
             }
         })
 
