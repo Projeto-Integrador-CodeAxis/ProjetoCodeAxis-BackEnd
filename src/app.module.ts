@@ -15,9 +15,9 @@ import { CursoModule } from './curso/curso.module';
     TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
-    port: 3306,
+    port: parseInt(process.env.PORT),
     username: 'root',
-    password: 'Lana5595',
+    password: process.env.PASSWORD,
     database: 'db_codeaxis',
     entities: [Categoria, Curso],
     synchronize: true
