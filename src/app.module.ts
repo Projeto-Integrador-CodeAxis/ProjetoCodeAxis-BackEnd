@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { Usuario } from './usuario/entities/usuario.entity';
 import { UsuarioModule } from './usuario/usuario.module';
 
+
 @Module({ 
   imports: [
     ConfigModule.forRoot(),
