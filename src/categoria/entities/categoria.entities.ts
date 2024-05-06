@@ -1,6 +1,7 @@
 import { IsNotEmpty } from "class-validator";
-import { Curso } from "src/curso/entities/curso.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { Curso } from "../../curso/entities/curso.entity";
+
 
 @Entity({name: 'tb_categorias'})
 export class Categoria {

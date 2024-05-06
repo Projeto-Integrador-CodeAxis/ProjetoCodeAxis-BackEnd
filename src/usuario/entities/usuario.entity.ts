@@ -1,6 +1,7 @@
-import { IsEmail, IsNotEmpty, MinLength } from "class-validator"
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
-import { Curso } from "src/curso/entities/curso.entity"
+import { IsNotEmpty, IsEmail, MinLength } from "class-validator"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
+import { Curso } from "../../curso/entities/curso.entity"
+
 
 @Entity({name: "tb_usuarios"})
 export class Usuario {
