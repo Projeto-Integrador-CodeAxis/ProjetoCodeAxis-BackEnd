@@ -2,7 +2,10 @@ import { UseGuards, Controller, Get, HttpCode, HttpStatus, Param, ParseIntPipe, 
 import { JwtAuthGuard } from "../../auth/guard/jwt-auth.guard";
 import { Curso } from "../entities/curso.entity";
 import { CursoService } from "../services/curso.service";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 
+@ApiTags('Curso')
+@ApiBearerAuth()
 @UseGuards(JwtAuthGuard)
 @Controller("/cursos")
 export class CursoController{

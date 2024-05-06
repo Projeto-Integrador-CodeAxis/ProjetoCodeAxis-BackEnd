@@ -4,6 +4,7 @@ import { Bcrypt } from "../auth/bcrypt/bcrypt";
 import { UsuarioController } from "./controllers/usuario.controller";
 import { Usuario } from "./entities/usuario.entity";
 import { UsuarioService } from "./services/usuario.service";
+import { ApiTags } from "@nestjs/swagger";
 
 
 
