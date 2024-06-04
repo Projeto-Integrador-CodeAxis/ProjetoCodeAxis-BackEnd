@@ -33,6 +33,6 @@ export class Usuario {
     
     @ApiProperty()
     @OneToMany(() => Curso, (curso) => curso.usuario)
-    curso: Curso[]
+    curso?: Curso[]
 
 }
