@@ -33,7 +33,6 @@ export class Curso{
     link: string
 
     @ApiProperty()
-    @IsNumber({maxDecimalPlaces: 2})
     @IsNotEmpty()
     @Column({type: 'decimal', precision: 10, scale: 2, nullable: false})
     valor: number
@@ -44,7 +43,8 @@ export class Curso{
     imagem: string
 
     @ApiProperty({
-        type: Any
+        type: () => Categoria
+
     })
     @ManyToOne(() => Categoria, (categoria) => categoria.curso, {
         onDelete: "CASCADE"
@@ -52,7 +52,9 @@ export class Curso{
     categoria: Categoria
 
     @ApiProperty({
-        type: Any
+
+        type: () => Usuario
+            
     })
     @ManyToOne(() => Usuario, (usuario) => usuario.curso, {
         onDelete: "CASCADE"
