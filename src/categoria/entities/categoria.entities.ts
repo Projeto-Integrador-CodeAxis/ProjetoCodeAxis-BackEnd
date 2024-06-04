@@ -18,5 +18,5 @@ export class Categoria {
 
     @ApiProperty()
     @OneToMany(() => Curso, (curso) => curso.categoria)
-    curso: Curso[]
+    curso?: Curso[]
 }
