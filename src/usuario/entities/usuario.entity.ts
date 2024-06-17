@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsEmail, MinLength } from "class-validator"
+import { IsNotEmpty, IsEmail, MinLength, IsString } from "class-validator"
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
 import { Curso } from "../../curso/entities/curso.entity"
 import { ApiProperty } from "@nestjs/swagger"
@@ -30,7 +30,13 @@ export class Usuario {
     @Column({length: 5000 }) 
     @ApiProperty()
     public foto: string
-    
+
+    @IsNotEmpty()
+    @IsString()
+    @ApiProperty({ default: 'user' })
+    @Column({ length: 255, nullable: false, default: 'user' })
+    public roles: string = 'user';
+
     @ApiProperty()
     @OneToMany(() => Curso, (curso) => curso.usuario)
     curso?: Curso[]

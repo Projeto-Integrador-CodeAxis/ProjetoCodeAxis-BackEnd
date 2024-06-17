@@ -7,9 +7,6 @@ import { CategoriaModule } from "./categoria/categoria.module";
 import { CursoModule } from "./curso/curso.module";
 import { ProdService } from "./data/services/prod.service";
 import { UsuarioModule } from "./usuario/usuario.module";
-import { DevService } from "./data/services/dev.service";
-
-
 
 
 @Module({
